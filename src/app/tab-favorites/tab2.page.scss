@@ -1,0 +1,17 @@
+.weather-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .weather-info p {
+    margin: 0;
+    font-size: 1.2em;
+  }
+  
+  .weather-icon {
+    width: 3em;
+    height: 3em;
+    margin-left: 8px;
+  }
+
+

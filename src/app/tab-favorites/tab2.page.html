@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Favorites
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="custom-padding">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Favorites</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let favorite of favorites">
+      <ion-item>
+        <ion-label>
+          <h2>{{ favorite.city }}</h2>
+          <div class="weather-info">
+            <p>{{ favorite.weather?.main?.temp }}°C</p>
+            <img [src]="getWeatherIconUrl(favorite.weather?.weather[0]?.icon)" alt="Weather icon" class="weather-icon">
+          </div>
+        </ion-label>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option color="danger" expandable (click)="removeFavorite(favorite.city)">Delete</ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+</ion-content>
